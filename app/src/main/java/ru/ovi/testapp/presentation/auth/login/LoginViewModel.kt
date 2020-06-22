@@ -66,7 +66,6 @@ class LoginViewModel(
         }
     }
 
-
     private fun Array<Int>.stringify(): String? {
         return takeIf { size > 0 }?.joinToString("\n") { resourceProvider.getString(it) }
     }

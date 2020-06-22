@@ -1,7 +1,7 @@
 package ru.ovi.testapp.data.api
 
 class Response<T : Any>(
-    private val message: String?,
+     val message: String?,
     private val code: Int,
     private val data: T?
 ) {
