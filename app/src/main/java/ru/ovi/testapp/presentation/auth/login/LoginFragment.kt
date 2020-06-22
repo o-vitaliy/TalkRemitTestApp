@@ -15,6 +15,7 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import ru.ovi.testapp.R
 import ru.ovi.testapp.domain.common.Result
+import ru.ovi.testapp.presentation.common.hideKeyboard
 import ru.ovi.testapp.presentation.common.showSnackBar
 import ru.ovi.testapp.presentation.common.visible
 import ru.ovi.testapp.presentation.viewModel
@@ -55,6 +56,11 @@ class LoginFragment : Fragment(), KodeinAware {
                 }
             }
         })
+    }
+
+    override fun onPause() {
+        super.onPause()
+        activity?.let { hideKeyboard(it) }
     }
 
 
