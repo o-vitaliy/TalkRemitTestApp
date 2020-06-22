@@ -10,12 +10,18 @@ import ru.ovi.testapp.data.auth.datasource.AuthDataSource
 import ru.ovi.testapp.data.auth.datasource.AuthRemoteDataSource
 import ru.ovi.testapp.data.auth.datasource.AuthTokenDataSource
 import ru.ovi.testapp.data.auth.datasource.AuthTokenPrefsDataSource
+import ru.ovi.testapp.domain.common.ResourceProvider
 import ru.perevozka24.perevozka24.data.prefs.PrefsSourceFactory
 
 val dataModule = Kodein.Module("data") {
     bind<SharedPreferences>() with singleton(ref = weakReference) {
         PrefsSourceFactory.create(instance())
     }
+
+    bind<ResourceProvider>() with singleton(ref = weakReference) {
+        ResourceProvider(instance())
+    }
+
     bind<AuthTokenDataSource>() with singleton(ref = weakReference) {
         AuthTokenPrefsDataSource(instance())
     }

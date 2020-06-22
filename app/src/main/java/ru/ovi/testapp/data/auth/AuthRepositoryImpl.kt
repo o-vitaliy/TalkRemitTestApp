@@ -23,4 +23,5 @@ class AuthRepositoryImpl(
         }
     }
 
+    override suspend fun isAuthorized(): Boolean = authTokenDataSource.authToken != null
 }
