@@ -20,5 +20,7 @@ sealed class Result<out T : Any> {
 }
 
 fun <T : Any> Result.Success<T>.isEmpty(): Boolean {
-    return data is Collection<*> && data.isEmpty()
+    val isEmptyList = data is Collection<*> && data.isEmpty()
+    val isEmptyContent = data is ContentModel && data.isEmpty()
+    return isEmptyList || isEmptyContent
 }

@@ -33,7 +33,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     // App dependencies
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
@@ -81,11 +80,18 @@ dependencies {
     // logger
     implementation "com.jakewharton.timber:timber:$timberVersion"
 
+    // threetenabp - time lib
+    implementation "com.jakewharton.threetenabp:threetenabp:$threetenabpVersion"
+    testImplementation "org.threeten:threetenbp:$threetenabpJavaVersion"
+
+
     // Assertions
     // AndroidX Test - Instrumented testing
     androidTestImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
     androidTestImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
     androidTestImplementation "androidx.test:rules:$androidXTestRulesVersion"
+
+    testImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
 }
 
 check.dependsOn "detekt", "checkstyle", "pmd", "lint"

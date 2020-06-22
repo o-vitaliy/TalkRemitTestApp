@@ -16,6 +16,7 @@ import org.kodein.di.android.x.kodein
 import ru.ovi.testapp.R
 import ru.ovi.testapp.domain.common.Result
 import ru.ovi.testapp.presentation.common.showSnackBar
+import ru.ovi.testapp.presentation.common.visible
 import ru.ovi.testapp.presentation.viewModel
 
 class LoginFragment : Fragment(), KodeinAware {
@@ -43,13 +44,13 @@ class LoginFragment : Fragment(), KodeinAware {
 
         viewModel.login.observe(viewLifecycleOwner, Observer {
             when (it) {
-                is Result.Loading -> loginProgressBar.visibility = View.VISIBLE
+                is Result.Loading -> loginProgressBar.visible = true
                 is Result.Error -> {
-                    loginProgressBar.visibility = View.INVISIBLE
+                    loginProgressBar.visible = false
                     showSnackBar(it.message)
                 }
                 is Result.Success -> {
-                    loginProgressBar.visibility = View.INVISIBLE
+                    loginProgressBar.visible = false
                     findNavController().navigate(R.id.action_login_to_transactions)
                 }
             }

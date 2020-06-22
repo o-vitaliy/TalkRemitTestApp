@@ -62,4 +62,6 @@ ext {
     groupieVersion = "2.8.0"
     navigationVersion = "2.3.0-rc01"
     timberVersion = '4.7.1'
+    threetenabpVersion = "1.2.4"
+    threetenabpJavaVersion = "1.4.4"
 }
