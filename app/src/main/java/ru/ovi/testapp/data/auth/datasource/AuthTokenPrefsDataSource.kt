@@ -14,5 +14,4 @@ class AuthTokenPrefsDataSource constructor(preferences: SharedPreferences) : Aut
     companion object {
         const val AUTH_TOKEN = "auth_token"
     }
-
 }

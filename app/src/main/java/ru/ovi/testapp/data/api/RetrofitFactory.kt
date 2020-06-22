@@ -25,11 +25,9 @@ object RetrofitFactory {
             interceptors.forEach {
                 addInterceptor(it)
             }
-
         }
         return builder.build()
     }
-
 
     fun create(gson: Gson, apiUrl: String, interceptors: Set<Interceptor>): Retrofit =
         Retrofit.Builder()

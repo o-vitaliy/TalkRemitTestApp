@@ -24,7 +24,8 @@ class LoginFragment : Fragment(), KodeinAware {
     override val kodein: Kodein by kodein()
     private val viewModel: LoginViewModel by viewModel()
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_auth_login, container, false)
@@ -62,6 +63,4 @@ class LoginFragment : Fragment(), KodeinAware {
         super.onPause()
         activity?.let { hideKeyboard(it) }
     }
-
-
 }

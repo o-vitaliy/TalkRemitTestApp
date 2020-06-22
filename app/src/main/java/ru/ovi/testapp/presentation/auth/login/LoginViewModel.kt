@@ -35,7 +35,6 @@ class LoginViewModel(
 
     val login: LiveData<Result<Unit>> = MutableLiveData()
 
-
     fun emailChange(username: String) {
         emailField.value?.value = username
         emailError.setValue(null)
@@ -66,7 +65,7 @@ class LoginViewModel(
         }
     }
 
-    private fun Array<Int>.stringify(): String? {
+    private fun IntArray.stringify(): String? {
         return takeIf { size > 0 }?.joinToString("\n") { resourceProvider.getString(it) }
     }
 }

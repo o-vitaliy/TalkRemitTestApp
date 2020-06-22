@@ -17,5 +17,4 @@ val viewModelModule = Kodein.Module(name = "viewModelModule") {
     bind<SplashViewModel>() with singleton { SplashViewModel(instance()) }
     bind<LoginViewModel>() with singleton { LoginViewModel(instance(), instance()) }
     bind<TransactionsViewModel>() with singleton { TransactionsViewModel(instance(), instance()) }
-
 }

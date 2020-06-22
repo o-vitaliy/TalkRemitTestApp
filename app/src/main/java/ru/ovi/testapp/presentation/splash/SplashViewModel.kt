@@ -7,5 +7,4 @@ import ru.ovi.testapp.domain.auth.AuthRepository
 class SplashViewModel(private val authRepository: AuthRepository) : ViewModel() {
 
     val authorized = liveData { emit(authRepository.isAuthorized()) }
-
 }

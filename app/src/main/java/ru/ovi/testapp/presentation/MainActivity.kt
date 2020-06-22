@@ -9,7 +9,6 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import ru.ovi.testapp.R
 
-
 class MainActivity : AppCompatActivity(), KodeinAware {
     override val kodein: Kodein by kodein()
 

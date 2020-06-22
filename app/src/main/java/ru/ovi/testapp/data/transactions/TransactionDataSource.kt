@@ -1,6 +1,5 @@
 package ru.ovi.testapp.data.transactions
 
-import ru.ovi.testapp.data.entity.TransactionEntity
 import ru.ovi.testapp.data.transactions.response.TransactionsResponse
 
 interface TransactionDataSource {

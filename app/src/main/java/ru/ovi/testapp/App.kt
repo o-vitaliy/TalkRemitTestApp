@@ -11,7 +11,7 @@ import ru.ovi.testapp.presentation.viewModelModule
 import ru.ovi.testapp.data.di.repositoryModule
 import timber.log.Timber
 
-class App : Application() , KodeinAware {
+class App : Application(), KodeinAware {
 
     override val kodein by Kodein.lazy {
         import(androidXModule(this@App))
@@ -21,7 +21,6 @@ class App : Application() , KodeinAware {
         import(viewModelModule)
     }
 
-
     override fun onCreate() {
         super.onCreate()
         if (BuildConfig.DEBUG) {
@@ -29,5 +28,4 @@ class App : Application() , KodeinAware {
         }
         AndroidThreeTen.init(this)
     }
-
 }
