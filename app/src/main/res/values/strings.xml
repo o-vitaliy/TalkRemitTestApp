@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">TestApp</string>
+    <string name="app_name">Talkremit TestApp</string>
+
+    <string name="auth.login.title">Login</string>
+    <string name="auth.login.username.hint">Username</string>
+    <string name="auth.login.password.hint">Password</string>
+    <string name="auth.login.button">Login</string>
+
+    <string name="transactions.title">Transactions</string>
+
 </resources>

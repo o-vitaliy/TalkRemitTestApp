@@ -60,4 +60,5 @@ ext {
     gsonVersion = '2.8.6'
     constraintlayoutVersion = '1.1.3'
     groupieVersion = "2.8.0"
+    navigationVersion = "2.3.0-rc01"
 }
