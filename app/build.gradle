@@ -17,10 +17,26 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs{
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile file("./../keys/key.jks")
+            storePassword "8acw15zcrjgCSc1a"
+            keyAlias "alias"
+            keyPassword "asdq3WksF8LLirX6"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro",
+                    "retrofit2.pro",
+                    "glide.pro",
+                    "okhttp3.pro"
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {

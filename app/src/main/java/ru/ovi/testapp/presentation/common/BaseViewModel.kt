@@ -19,8 +19,6 @@ import java.net.UnknownHostException
 @SuppressWarnings("TooGenericExceptionCaught")
 abstract class BaseViewModel(val resourceProvider: ResourceProvider) : ViewModel() {
 
-    val error: LiveData<String> = MutableLiveData()
-
     inline fun <T : Any> launch(
         liveData: LiveData<Result<T>>,
         updateLoading: Boolean = true,
